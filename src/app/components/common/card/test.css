@@ -1,0 +1,48 @@
+.container {
+    width: 350px;
+    height: 500px;
+    perspective: 800px;
+    margin: 50px;
+}
+
+.container:hover>.card {
+    cursor: pointer;
+    transform: rotateY(180deg);
+    animation: 3s linear 1s infinite running slidein;
+}
+
+
+@-webkit-keyframes slidein {
+    from {
+        transform: rotateY(200deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+
+.card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    /* background: red; */
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back {
+    /* background-color: #3a3a3a; */
+    color: #333;
+    transform: rotateY(180deg);
+    padding: 55px;
+}
