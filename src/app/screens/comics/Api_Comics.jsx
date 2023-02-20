@@ -8,17 +8,12 @@ export default function Api_Comics() {
     const [data, setData] = useState();
     const [isLoading, setIsLoading] = useState(true);
 
-    // const [skip, setSkip] = useState(0);
-    // const [limit, setLimit] = useState(5);
     useEffect(() => {
-        const skip = 4;
-        const limit = 5;
         const fetchData = async () => {
             try {
                 const response = await axios.get(
                     `/api/comics`,
                     // `/api/comics/ApiLeReacteur?skip=${skip}&limit=${limit}`,
-                    // `https://site--mymarvel--hw4gvwsxlwd5.code.run/comics`
                 );
                 console.log(response.data);
                 setData(response.data);
